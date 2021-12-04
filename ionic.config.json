@@ -1,0 +1,7 @@
+{
+  "name": "whatsappStickerYard",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
