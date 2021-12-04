@@ -25,6 +25,12 @@
                 "input": "src/assets",
                 "output": "assets"
               },
+
+              {
+                "glob": "**/*",
+                "input": "src/emojis",
+                "output": "./"
+              },
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -171,6 +177,7 @@
     }
   },
   "cli": {
+    "analytics": "181df2b7-0c7b-43e1-b275-b857a42bc666",
     "defaultCollection": "@ionic/angular-toolkit"
   },
   "schematics": {
