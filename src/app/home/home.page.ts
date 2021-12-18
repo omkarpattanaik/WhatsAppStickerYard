@@ -10,6 +10,16 @@ export class HomePage {
 
   constructor() {}
 
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400,
+    watchSlidesProgress: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+    }
+  };
+
   addStickerToWhatsApp(identifierData, nameData) {
     var jsonObject = { identifier: identifierData, name: nameData };
     console.log("jsonObject: ",jsonObject);

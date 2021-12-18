@@ -373,6 +373,40 @@
           ]
         }
       ]
+    },
+    {
+      "identifier": "3",
+      "name": "One Puch Man",
+      "publisher": "Omkar",
+      "tray_image_file": "02_Look_At_That.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "01_Justice_Enforced.webp",
+          "emojis": ["🎉",
+            "😤"
+          ]
+        },
+        {
+          "image_file": "02_Look_At_That.webp",
+          "emojis": [
+            "😱",
+            "😵"
+          ]
+        },
+        {
+          "image_file":"03_Im_Bald_Whats_Your_Prob.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        }
+      ]
     }
   ]
 }

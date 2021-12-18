@@ -25,3 +25,51 @@
 #container a {
   text-decoration: none;
 }
+
+.imageSizPoster{
+  height: 40vw;
+  margin-right: 10px;
+}
+
+.headerTxtPoster{
+  font-family: 'Montserrat-Medium';
+  font-weight: bold;
+  font-size: smaller;
+  font-size: 4.5vw;
+}
+
+.butnShape{
+  // border: 2px solid;
+  // border-radius: 12px;
+  //padding-left: 64px !important;
+  margin-left: 0px;
+  margin-right: -6vw;
+
+}
+
+.butnSiz{
+  margin-left: 0vw;
+}
+
+.headerTxt{
+  max-width: 26vw;
+  font-family: 'Montserrat-Medium';
+  font-weight: bold;
+  font-size: smaller;
+  font-size: 4.5vw;
+}
+
+.imageSiz{
+  height: 30vw;
+  margin-right: 10px;
+}
+
+.itemSpac{
+  padding-top: 10px;
+}
+
+.cardShape{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+}

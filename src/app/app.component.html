@@ -1,4 +1,9 @@
 <ion-app>
- 
+  <button class="menuStart" >
+    <ion-menu color="new" style="position:absolute;"></ion-menu>
+  </button>
+  <ion-split-pane when="xl" contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay"></ion-menu>
+  </ion-split-pane>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

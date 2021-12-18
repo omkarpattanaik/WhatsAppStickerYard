@@ -111,6 +111,12 @@
                 "input": "src/",
                 "output": "/"
               },
+              
+              {
+                "glob": "**/*",
+                "input": "src/emojis",
+                "output": "./"
+              },
               {
                 "glob": "**/*",
                 "input": "src/assets",
