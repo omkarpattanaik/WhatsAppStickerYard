@@ -28,8 +28,8 @@ jobs:
       with:
         cordova-version: 10
         
-    - name: Removing 31.0.0 Build tool
-      run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;31.0.0'
+    - name: Removing 32.0.0 Build tool
+      run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;32.0.0'
 
     - name: Build app-debug.apk ionic
       run: |
