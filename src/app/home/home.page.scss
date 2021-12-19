@@ -27,14 +27,15 @@
 }
 
 .imageSizPoster{
-  height: 40vw;
+  height: 25vh;
   margin-right: 10px;
+  margin-left: -15px;
 }
 
 .headerTxtPoster{
   font-family: 'Montserrat-Medium';
   font-weight: bold;
-  font-size: smaller;
+  color:black;
   font-size: 4.5vw;
 }
 
@@ -69,7 +70,17 @@
 }
 
 .cardShape{
-  padding-top: 10px;
-  padding-bottom: 5px;
   border-radius: 10px;
+}
+
+
+@media (prefers-color-scheme: light) {
+
+  .cardItemUpper{
+    --background: #eadff2;
+  }
+
+  .cardItemBelow{
+    --background: #dccbed;
+  }
 }
