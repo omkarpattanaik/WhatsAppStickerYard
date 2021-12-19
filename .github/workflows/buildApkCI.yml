@@ -99,4 +99,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: app-release-signed.apk
-        path: platforms/android/app/build/outputs/apk/debug/app-release-unsigned-signed.apk
+        path: platforms/android/app/build/outputs/apk/release/app-release-unsigned-signed.apk
