@@ -5,15 +5,18 @@
 
     <ion-slides pager="true" [options]="slideOpts" >
       <ion-slide *ngFor="let slid of sliderPosterContent">
-        <ion-card>
-          <ion-item [style.--background]="slid.background">
+        
+          <ion-item *ngIf="slid.background" [style.--background]="slid.background">
         
             <ion-img class="imageSizPoster" slot="start" [src]="slid.src"> </ion-img>
-            <div  class="headerTxtPoster" >{{slid.txtContent}}</div>
+            <div  class="headerTxtPoster" *ngIf="slid.txtContent">{{slid.txtContent}}</div>
   
-            <!-- <ion-icon name="logo-whatsapp" slot="end"></ion-icon> -->
           </ion-item>
-        </ion-card>
+
+         
+          <img *ngIf="!slid.background" class="imageSizPoster2" slot="start" [src]="slid.src"> 
+         
+        
       </ion-slide>
      
     </ion-slides>
