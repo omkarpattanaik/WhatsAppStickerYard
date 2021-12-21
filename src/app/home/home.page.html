@@ -3,42 +3,19 @@
 <ion-content [fullscreen]="true">
 
 
-    <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide>
+    <ion-slides pager="true" [options]="slideOpts" >
+      <ion-slide *ngFor="let slid of sliderPosterContent">
         <ion-card>
-          <ion-item >
+          <ion-item [style.--background]="slid.background">
         
-            <ion-img class="imageSizPoster" slot="start" src="../../1/21_Cuppy_hi.webp"> </ion-img>
-            <div  class="headerTxtPoster" >A Remix style audio world</div>
+            <ion-img class="imageSizPoster" slot="start" [src]="slid.src"> </ion-img>
+            <div  class="headerTxtPoster" >{{slid.txtContent}}</div>
   
             <!-- <ion-icon name="logo-whatsapp" slot="end"></ion-icon> -->
           </ion-item>
         </ion-card>
       </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-item >
-      
-            <ion-img class="imageSizPoster" slot="start" src="../../2/04_AirHighFive.webp"> </ion-img>
-            <div  class="headerTxtPoster" >A Paint style audio world</div>
-                          
-           
-            <!-- <ion-icon name="logo-whatsapp" slot="end"></ion-icon> -->
-          </ion-item>
-        </ion-card>
-        
-      </ion-slide>
-      <ion-slide>
-        <ion-card>
-          <ion-item >
-      
-            <ion-img class="imageSizPoster" slot="start" src="../../3/01_Justice_Enforced.webp"> </ion-img>
-            <div  class="headerTxtPoster" >A Host style audio world</div>
-            
-            <!-- <ion-icon name="logo-whatsapp" slot="end"></ion-icon> -->
-          </ion-item>
-        </ion-card>
-      </ion-slide>
+     
     </ion-slides>
 
   <!-- <div id="container">
@@ -59,44 +36,42 @@
 
   <div>
 
-    <ion-chip>
+    <ion-chip  [outline]="prefersDark" [color]="prefersDark ? 'secondary':''">
       <ion-label>Default</ion-label>
     </ion-chip>
-    <ion-chip>
-      <ion-avatar>
-        <img src="../../3/01_Justice_Enforced.webp">
+
+    <ion-chip  [outline]="prefersDark" [color]="prefersDark ? 'secondary':''">
+      <ion-avatar >
+        <img src="3/01_Justice_Enforced.webp">
       </ion-avatar>
-      <ion-card-title>Anime</ion-card-title>
-      
+      <ion-label>Anime</ion-label>  
     </ion-chip>
     
-    <ion-chip>
+    <ion-chip  [outline]="prefersDark" [color]="prefersDark ? 'secondary':''">
       <ion-icon name="pin" color="primary"></ion-icon>
-      <ion-card-title>Cartoon</ion-card-title>
-      <ion-icon name="close"></ion-icon>
+      <ion-label>Cartoon</ion-label>
     </ion-chip>
     
-    <ion-chip>
+    <ion-chip    [outline]="prefersDark" [color]="prefersDark ? 'secondary':''">
       <ion-avatar>
-        <img src="../../1/tray_Cuppy.png">
+        <img src="1/tray_Cuppy.png">
       </ion-avatar>
-      <ion-card-title>Love</ion-card-title>
+      <ion-label>Love</ion-label>
     </ion-chip>
   
-    <ion-chip>
+    <ion-chip   [outline]="prefersDark" [color]="prefersDark ? 'secondary':''">
       <ion-avatar>
-        <img src="../../1/21_Cuppy_hi.webp">
+        <img src="1/21_Cuppy_hi.webp">
       </ion-avatar>
       <ion-label>Avatar Chip</ion-label>
-      <ion-icon name="close-circle"></ion-icon>
     </ion-chip>
   <ion-label>&nbsp;<a>.... see more</a></ion-label>
   </div>
 
   <ion-card class="cardShape" *ngFor="let i of [0,1,2,3]">
-    <ion-item >
+    <ion-item class="cardItemUpper">
       
-      <ion-img class="imageSiz" slot="start" src="../../2/04_AirHighFive.webp"> </ion-img>
+      <ion-img class="imageSiz" slot="start" src="2/04_AirHighFive.webp"> </ion-img>
       <div  class="headerTxt" >A Remix style audio world</div>
       <ion-tab-button class="butnShape" (click)="addStickerToWhatsApp('1', 'Cuppy')" >
         
@@ -106,18 +81,18 @@
       <!-- <ion-icon name="logo-whatsapp" slot="end"></ion-icon> -->
     </ion-item>
 
-    <ion-item >
+    <ion-item class="cardItemBelow">
       <ion-avatar slot="start">
-        <img src="../../1/21_Cuppy_hi.webp">
+        <img src="1/21_Cuppy_hi.webp">
       </ion-avatar>
       <ion-avatar slot="start">
-        <img src="../../1/23_Cuppy_greentea.webp">
+        <img src="1/23_Cuppy_greentea.webp">
       </ion-avatar>
       <ion-avatar slot="start">
-        <img src="../../2/04_AirHighFive.webp">
+        <img src="2/04_AirHighFive.webp">
       </ion-avatar>
       <ion-avatar slot="start">
-        <img src="../../3/01_Justice_Enforced.webp">
+        <img src="3/01_Justice_Enforced.webp">
       </ion-avatar>
       <ion-button class="butnSiz" fill="outline" slot="end">View all</ion-button>
     </ion-item>
@@ -131,8 +106,8 @@
     <div id="deviceready" class="blink">
         <p class="event listening">Connecting to Device</p>
         <p class="event received">Device is Ready</p>
-        <img src="../../assets/shapes.svg">
-        <img src="../../1/tray_Cuppy.png">
+        <img src="assets/shapes.svg">
+        <img src="1/tray_Cuppy.png">
      
     </div>
     <button (click)="addStickerToWhatsApp('1', 'Cuppy')">Add Cuppy Pack</button>
