@@ -407,6 +407,68 @@
           ]
         }
       ]
+    },
+    {
+      "identifier": "buntyBubbly",
+      "name": "Bunty Aur Babli",
+      "publisher": "whatappStickerYard",
+      "tray_image_file": "buntybubbly1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "buntybubbly1.webp",
+          "emojis": ["🎉",
+            "😤"
+          ]
+        },
+        {
+          "image_file": "buntybubbly2.webp",
+          "emojis": [
+            "😱",
+            "😵"
+          ]
+        },
+        {
+          "image_file":"buntybubbly3.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"buntybubbly4.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"buntybubbly5.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"buntybubbly6.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"buntybubbly7.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        }
+      ]
     }
   ]
 }

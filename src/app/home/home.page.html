@@ -71,12 +71,12 @@
   <ion-label>&nbsp;<a>.... see more</a></ion-label>
   </div>
 
-  <ion-card class="cardShape" *ngFor="let i of [0,1,2,3]">
+  <ion-card class="cardShape" *ngFor="let sticker of contentData">
     <ion-item class="cardItemUpper">
       
-      <ion-img class="imageSiz" slot="start" src="2/04_AirHighFive.webp"> </ion-img>
-      <div  class="headerTxt" >A Remix style audio world</div>
-      <ion-tab-button class="butnShape" (click)="addStickerToWhatsApp('1', 'Cuppy')" >
+      <ion-img class="imageSiz" slot="start" [src]="sticker.identifier+'/'+sticker.tray_image_file"> </ion-img>
+      <div  class="headerTxt" >{{sticker.name}}</div>
+      <ion-tab-button class="butnShape" (click)="addStickerToWhatsApp(sticker.identifier,sticker.name)" >
         
         <ion-label  style="font-size: 4.5vw;">Add to</ion-label>
         <ion-icon name="logo-whatsapp"  style="font-size: 14vw;"></ion-icon>
@@ -85,10 +85,10 @@
     </ion-item>
 
     <ion-item class="cardItemBelow">
-      <ion-avatar slot="start">
-        <img src="1/21_Cuppy_hi.webp">
+      <ion-avatar slot="start"  *ngFor="let pic of sticker.stickers | slice:0:4">
+        <img [src]="sticker.identifier+'/'+pic.image_file">
       </ion-avatar>
-      <ion-avatar slot="start">
+      <!-- <ion-avatar slot="start">
         <img src="1/23_Cuppy_greentea.webp">
       </ion-avatar>
       <ion-avatar slot="start">
@@ -96,7 +96,7 @@
       </ion-avatar>
       <ion-avatar slot="start">
         <img src="3/01_Justice_Enforced.webp">
-      </ion-avatar>
+      </ion-avatar> -->
       <ion-button class="butnSiz" fill="outline" slot="end">View all</ion-button>
     </ion-item>
   </ion-card>
