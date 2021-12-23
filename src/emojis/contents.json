@@ -469,6 +469,117 @@
           ]
         }
       ]
+    },
+    {
+      "identifier": "rumble",
+      "name": "Bunty Aur Babli",
+      "publisher": "whatappStickerYard",
+      "tray_image_file": "rumble1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "rumble1.webp",
+          "emojis": ["🎉",
+            "😤"
+          ]
+        },
+        {
+          "image_file": "rumble2.webp",
+          "emojis": [
+            "😱",
+            "😵"
+          ]
+        },
+        {
+          "image_file":"rumble3.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble4.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble5.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble6.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble7.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble8.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble9.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble10.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble11.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble12.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble13.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        },
+        {
+          "image_file":"rumble14.webp",
+          "emojis":[            
+            "😡",
+            "😤"
+          ]
+        }
+      ]
     }
   ]
 }

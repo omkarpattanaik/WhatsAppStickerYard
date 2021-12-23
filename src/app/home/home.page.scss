@@ -55,10 +55,12 @@
 
 .butnSiz{
   margin-left: 0vw;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
 .headerTxt{
-  max-width: 26vw;
+  width: 26vw;
   font-family: 'Montserrat-Medium';
   font-weight: bold;
   font-size: smaller;
@@ -82,10 +84,10 @@
 @media (prefers-color-scheme: light) {
 
   .cardItemUpper{
-    --background: #eadff2;
+    --background: linear-gradient(#6a82efcc, #cea9f5);
   }
 
   .cardItemBelow{
-    --background: #dccbed;
+    --background: #cea9f5;
   }
 }

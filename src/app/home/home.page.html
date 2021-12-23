@@ -85,26 +85,22 @@
     </ion-item>
 
     <ion-item class="cardItemBelow">
-      <ion-avatar slot="start"  *ngFor="let pic of sticker.stickers | slice:0:4">
-        <img [src]="sticker.identifier+'/'+pic.image_file">
-      </ion-avatar>
-      <!-- <ion-avatar slot="start">
-        <img src="1/23_Cuppy_greentea.webp">
-      </ion-avatar>
-      <ion-avatar slot="start">
-        <img src="2/04_AirHighFive.webp">
-      </ion-avatar>
-      <ion-avatar slot="start">
-        <img src="3/01_Justice_Enforced.webp">
-      </ion-avatar> -->
-      <ion-button class="butnSiz" fill="outline" slot="end">View all</ion-button>
+      <span>
+        <ion-item>
+          <ion-avatar slot="start"  *ngFor="let pic of sticker.stickers | slice:0:4">
+            <img (click)="sticker.tray_image_file= pic.image_file" [src]="sticker.identifier+'/'+pic.image_file">
+          </ion-avatar>
+        </ion-item> 
+      </span>
+
+      <ion-button class="butnSiz" [fill]="prefersDark ? 'outline':'clean'" slot="end">View all</ion-button>
     </ion-item>
   </ion-card>
 
  
   
 
-  <div class="app">
+  <!-- <div class="app">
     <h1>Apache Cordova</h1>
     <div id="deviceready" class="blink">
         <p class="event listening">Connecting to Device</p>
@@ -116,6 +112,6 @@
     <button (click)="addStickerToWhatsApp('1', 'Cuppy')">Add Cuppy Pack</button>
     <div></div>
     <button (click)="addStickerToWhatsApp('2', 'Together While Apart')">Add Together While Apart Pack</button>
-  </div>
+  </div> -->
 
 </ion-content>
