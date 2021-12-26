@@ -11,8 +11,8 @@
       "avoid_cache": false,
       "publisher_email": "",
       "publisher_website": "",
-      "privacy_policy_website": "",
-      "license_agreement_website": "",
+      "privacy_policy_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
+      "license_agreement_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
       "stickers": [
         {
           "image_file": "01_Cuppy_smile.webp",
@@ -200,8 +200,8 @@
       "avoid_cache": false,
       "publisher_email": "",
       "publisher_website": "",
-      "privacy_policy_website": "",
-      "license_agreement_website": "",
+      "privacy_policy_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
+      "license_agreement_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
       "animated_sticker_pack": true,
       "stickers": [
         {
@@ -383,8 +383,8 @@
       "avoid_cache": false,
       "publisher_email": "",
       "publisher_website": "",
-      "privacy_policy_website": "",
-      "license_agreement_website": "",
+      "privacy_policy_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
+      "license_agreement_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
       "stickers": [
         {
           "image_file": "01_Justice_Enforced.webp",
@@ -409,78 +409,16 @@
       ]
     },
     {
-      "identifier": "buntyBubbly",
-      "name": "Bunty Aur Babli",
-      "publisher": "whatappStickerYard",
-      "tray_image_file": "buntybubbly1.webp",
-      "image_data_version": "1",
-      "avoid_cache": false,
-      "publisher_email": "",
-      "publisher_website": "",
-      "privacy_policy_website": "",
-      "license_agreement_website": "",
-      "stickers": [
-        {
-          "image_file": "buntybubbly1.webp",
-          "emojis": ["🎉",
-            "😤"
-          ]
-        },
-        {
-          "image_file": "buntybubbly2.webp",
-          "emojis": [
-            "😱",
-            "😵"
-          ]
-        },
-        {
-          "image_file":"buntybubbly3.webp",
-          "emojis":[            
-            "😡",
-            "😤"
-          ]
-        },
-        {
-          "image_file":"buntybubbly4.webp",
-          "emojis":[            
-            "😡",
-            "😤"
-          ]
-        },
-        {
-          "image_file":"buntybubbly5.webp",
-          "emojis":[            
-            "😡",
-            "😤"
-          ]
-        },
-        {
-          "image_file":"buntybubbly6.webp",
-          "emojis":[            
-            "😡",
-            "😤"
-          ]
-        },
-        {
-          "image_file":"buntybubbly7.webp",
-          "emojis":[            
-            "😡",
-            "😤"
-          ]
-        }
-      ]
-    },
-    {
       "identifier": "rumble",
-      "name": "Bunty Aur Babli",
+      "name": "Rumble",
       "publisher": "whatappStickerYard",
       "tray_image_file": "rumble1.webp",
       "image_data_version": "1",
       "avoid_cache": false,
       "publisher_email": "",
       "publisher_website": "",
-      "privacy_policy_website": "",
-      "license_agreement_website": "",
+      "privacy_policy_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
+      "license_agreement_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
       "stickers": [
         {
           "image_file": "rumble1.webp",
@@ -579,6 +517,117 @@
             "😤"
           ]
         }
+      ]
+    },
+    {
+      "identifier": "Encanto",
+      "name": "Encanto",
+      "publisher": "World Health Organization",
+      "tray_image_file": "01.png",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
+      "license_agreement_website": "https://myhappyastrohouse.web.app/privacy-policy-whatsappstickeryard",
+      "animated_sticker_pack": true,
+      "stickers": [
+        {
+          "image_file": "encanto1.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto2.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto3.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto4.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto5.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto6.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto7.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto8.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto9.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto10.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto11.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
+        {
+          "image_file": "encanto12.webp",
+          "emojis": [
+            "🥰",
+            "😘",
+            "❤️"
+          ]
+        },
       ]
     }
   ]
