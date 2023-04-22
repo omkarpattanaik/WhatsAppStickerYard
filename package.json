@@ -1,8 +1,8 @@
 {
   "name": "whatsappStickerYard",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Omkar Pattanaik",
+  "homepage": "https://studyandmasti.cyou/en/studyandmasti/home/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
