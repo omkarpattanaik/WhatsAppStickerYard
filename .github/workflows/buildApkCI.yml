@@ -16,6 +16,11 @@ jobs:
     steps:
     - name: Uses actions/checkout@2
       uses: actions/checkout@v2
+      
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 16
+        registry-url: https://registry.npmjs.org/
     
     - name: Java install
       uses: actions/setup-java@v2
@@ -63,6 +68,11 @@ jobs:
     steps:
     - name: Uses actions/checkout@2
       uses: actions/checkout@v2
+    
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 16
+        registry-url: https://registry.npmjs.org/
     
     - name: Java install
       uses: actions/setup-java@v2
