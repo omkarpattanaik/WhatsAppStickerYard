@@ -28,10 +28,10 @@ jobs:
        distribution: 'adopt' # See 'Supported distributions' for available options
        java-version: '8'
        
-    - name: Use coturiv/setup-ionic java
-      uses: coturiv/setup-ionic@v1.0.4
-      with:
-        cordova-version: 10
+#     - name: Use coturiv/setup-ionic java
+#       uses: coturiv/setup-ionic@v1.0.4
+#       with:
+#         cordova-version: 10
         
 #     - name: Removing 32.0.0 Build tool
 #       run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;32.0.0'
@@ -42,8 +42,8 @@ jobs:
 
     - name: Build app-debug.apk ionic
       run: |
-        ionic cordova platform add android
-        ionic cordova build android --debug
+        npx ionic cordova platform add android
+        npx ionic cordova build android --debug
     
     - name: Sign the debug.APK
       uses: r0adkll/sign-android-release@v1
