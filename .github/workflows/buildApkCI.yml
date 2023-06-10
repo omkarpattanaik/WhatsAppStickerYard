@@ -42,8 +42,9 @@ jobs:
 
     - name: Build app-debug.apk ionic
       run: |
-        npx ionic cordova platform add android
-        npx ionic cordova build android --debug
+        npx ionic build
+        npx cordova platform add android
+        npx cordova build android --debug
     
     - name: Sign the debug.APK
       uses: r0adkll/sign-android-release@v1
