@@ -3,8 +3,14 @@
 <ion-content [fullscreen]="true">
 
 
-    <ion-slides pager="true" [options]="slideOpts" >
-      <ion-slide *ngFor="let slid of sliderPosterContent">
+    <swiper-container [pagination]="{
+      el: '.swiper-pagination',
+      type: 'bullets',
+    }"  [initialSlide]=1 [speed]="400" [watchSlidesProgress]=true [autoplay]="{
+      delay: 3000,
+      disableOnInteraction: true,
+    }">
+      <swiper-slide *ngFor="let slid of sliderPosterContent">
         
           <ion-item *ngIf="slid.background" [style.--background]="slid.background">
         
@@ -17,9 +23,9 @@
           <img *ngIf="!slid.background" class="imageSizPoster2" slot="start" [src]="slid.src"> 
          
         
-      </ion-slide>
+      </swiper-slide>
      
-    </ion-slides>
+    </swiper-container>
 
   <!-- <div id="container">
     <strong>Ready to create an app?</strong>
@@ -87,7 +93,7 @@
     <ion-item class="cardItemBelow">
       <span>
         <ion-item>
-          <ion-avatar slot="start"  *ngFor="let pic of sticker.stickers | slice:0:4">
+          <ion-avatar slot="start"  *ngFor="let pic of stickersArrayConverter(sticker.stickers) | slice:0:4">
             <img (click)="sticker.tray_image_file= pic.image_file" [src]="sticker.identifier+'/'+pic.image_file">
           </ion-avatar>
         </ion-item> 

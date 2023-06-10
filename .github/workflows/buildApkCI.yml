@@ -19,20 +19,20 @@ jobs:
       
     - uses: actions/setup-node@v3
       with:
-        node-version: 14
+        node-version: 16
         registry-url: https://registry.npmjs.org/
     
     - name: Java install
       uses: actions/setup-java@v3
       with:
        distribution: 'adopt' # See 'Supported distributions' for available options
-       java-version: '8'
+       java-version: '11'
        
-    - name: Use coturiv/setup-ionic java
-      uses: coturiv/setup-ionic@v1.0.4
-      with:
-        cordova-version: 11
-        ionic-version: 6.20.1
+    # - name: Use coturiv/setup-ionic java
+    #   uses: coturiv/setup-ionic@v1.0.4
+    #   with:
+    #     cordova-version: 11
+    #     ionic-version: 6.20.1
         
 #     - name: Removing 32.0.0 Build tool
 #       run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;32.0.0'
@@ -41,73 +41,147 @@ jobs:
 #     - name: Removing 31.0.0 Build tool
 #       run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;31.0.0'
 
-    - name: Build app-debug.apk ionic
+    - name: install packages
+      run:
+        npm install
+    - name: ionic build
+      run:
+        npm run build
+    - name: add Android platform to capacitor
+      run:
+        npx cap add android
+
+    - name:  update capacitor plugins & dependencies
+      run:
+        npx cap update
+    - name:  copy capacitor files
+      run:
+        npx cap copy
+    - name:  resource creation
+      run:
+        npm run resources
+
+    - name: Set app version from package.json
+      run:
+        npx  cap-set-version-from-package
+
+    - uses: gradle/gradle-build-action@v2
+      with:
+        gradle-version: 7.3.3
+
+    - name:  create release .aab file
       run: |
-        ionic cordova platform add android
-        ionic cordova build android --debug
-    
+        cd android && gradle bundle
+    - name:  create debug apk file
+      run:
+        cd android && gradle assembleDebug
+    - name:  create release apk
+      run: |
+        cd android && gradle assembleRelease
+
     - name: Sign the debug.APK
       uses: r0adkll/sign-android-release@v1
       with:
-        releaseDirectory: platforms/android/app/build/outputs/apk/debug
+        releaseDirectory: android/app/build/outputs/apk/debug
         signingKeyBase64: ${{ secrets.KEYSTORE_WHATSAPP_STICKER_YARD }}
         alias: ${{ secrets.ALIAS_NAME_WHATSAPP_STICKER_YARD }}
         keyStorePassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
         keyPassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
-    
+
+    - name: Sign the release aab
+      uses: r0adkll/sign-android-release@v1
+      with:
+        releaseDirectory: android/app/build/outputs/bundle/release
+        signingKeyBase64: ${{ secrets.KEYSTORE_WHATSAPP_STICKER_YARD }}
+        alias: ${{ secrets.ALIAS_NAME_WHATSAPP_STICKER_YARD }}
+        keyStorePassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
+        keyPassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
+
     - name: Upload app-debug-signed.apk to Git Artifact
       uses: actions/upload-artifact@master
       with:
         name: app-debug-unsigned-signed.apk
-        path: platforms/android/app/build/outputs/apk/debug/app-debug-signed.apk
-    
-    
-    
-   Android_RELEASE_APK_Build: # make sure the action works on a clean machine without building
-    #needs: [ Web_Logic_Test ]
-    runs-on: ubuntu-latest
-    steps:
-    - name: Uses actions/checkout@2
-      uses: actions/checkout@v2
-    
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 16
-        registry-url: https://registry.npmjs.org/
-    
-    - name: Java install
-      uses: actions/setup-java@v2
-      with:
-       distribution: 'adopt' # See 'Supported distributions' for available options
-       java-version: '8'
-       
-    - name: Use coturiv/setup-ionic java
-      uses: coturiv/setup-ionic@v1.0.4
-      with:
-        cordova-version: 10
-        
-    - name: Removing 32.0.0 Build tool
-      run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;32.0.0'
-        
-    - name: Removing 31.0.0 Build tool
-      run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;31.0.0'
+        path: android/app/build/outputs/apk/debug/app-debug-signed.apk
 
-    - name: Build app-release.apk ionic
-      run: |
-        ionic cordova platform add android
-        ionic cordova build android --release --info --scan --prod --aot=true --build-optimizer=false --vender-chunk=true
-    
-    - name: Sign the release.APK
-      uses: r0adkll/sign-android-release@v1
-      with:
-        releaseDirectory: platforms/android/app/build/outputs/apk/release
-        signingKeyBase64: ${{ secrets.KEYSTORE_WHATSAPP_STICKER_YARD }}
-        alias: ${{ secrets.ALIAS_NAME_WHATSAPP_STICKER_YARD }}
-        keyStorePassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
-        keyPassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
-    
-    - name: Upload app-release-signed.apk to Git Artifact
+    - name: Upload app-release-signed.aab to Git Artifact
       uses: actions/upload-artifact@master
       with:
-        name: app-release-signed.apk
-        path: platforms/android/app/build/outputs/apk/release/app-release-unsigned-signed.apk
+        name: app-release-signed.aab
+        path: android/app/build/outputs/bundle/release/app-release.aab
+
+    # - name: Upload AndroidManifest.xml to Git Artifact
+    #   uses: actions/upload-artifact@master
+    #   with:
+    #     name: AndroidManifest.xml
+    #     path: android/app/src/main/AndroidManifest.xml
+
+    # - name: Build app-debug.apk ionic
+    #   run: |
+    #     ionic cordova platform add android
+    #     ionic cordova build android --debug
+    
+    # - name: Sign the debug.APK
+    #   uses: r0adkll/sign-android-release@v1
+    #   with:
+    #     releaseDirectory: platforms/android/app/build/outputs/apk/debug
+    #     signingKeyBase64: ${{ secrets.KEYSTORE_WHATSAPP_STICKER_YARD }}
+    #     alias: ${{ secrets.ALIAS_NAME_WHATSAPP_STICKER_YARD }}
+    #     keyStorePassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
+    #     keyPassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
+    
+    # - name: Upload app-debug-signed.apk to Git Artifact
+    #   uses: actions/upload-artifact@master
+    #   with:
+    #     name: app-debug-unsigned-signed.apk
+    #     path: platforms/android/app/build/outputs/apk/debug/app-debug-signed.apk
+    
+    
+    
+  #  Android_RELEASE_APK_Build: # make sure the action works on a clean machine without building
+  #   #needs: [ Web_Logic_Test ]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Uses actions/checkout@2
+  #     uses: actions/checkout@v2
+    
+  #   - uses: actions/setup-node@v1
+  #     with:
+  #       node-version: 16
+  #       registry-url: https://registry.npmjs.org/
+    
+  #   - name: Java install
+  #     uses: actions/setup-java@v2
+  #     with:
+  #      distribution: 'adopt' # See 'Supported distributions' for available options
+  #      java-version: '8'
+       
+  #   - name: Use coturiv/setup-ionic java
+  #     uses: coturiv/setup-ionic@v1.0.4
+  #     with:
+  #       cordova-version: 10
+        
+  #   - name: Removing 32.0.0 Build tool
+  #     run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;32.0.0'
+        
+  #   - name: Removing 31.0.0 Build tool
+  #     run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;31.0.0'
+
+  #   - name: Build app-release.apk ionic
+  #     run: |
+  #       ionic cordova platform add android
+  #       ionic cordova build android --release --info --scan --prod --aot=true --build-optimizer=false --vender-chunk=true
+    
+  #   - name: Sign the release.APK
+  #     uses: r0adkll/sign-android-release@v1
+  #     with:
+  #       releaseDirectory: platforms/android/app/build/outputs/apk/release
+  #       signingKeyBase64: ${{ secrets.KEYSTORE_WHATSAPP_STICKER_YARD }}
+  #       alias: ${{ secrets.ALIAS_NAME_WHATSAPP_STICKER_YARD }}
+  #       keyStorePassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
+  #       keyPassword: ${{ secrets.KEYSTORE_PASS_WHATSAPP_STICKER_YARD }}
+    
+  #   - name: Upload app-release-signed.apk to Git Artifact
+  #     uses: actions/upload-artifact@master
+  #     with:
+  #       name: app-release-signed.apk
+  #       path: platforms/android/app/build/outputs/apk/release/app-release-unsigned-signed.apk
