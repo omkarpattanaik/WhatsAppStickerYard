@@ -42,6 +42,7 @@ jobs:
 
     - name: Build app-debug.apk ionic
       run: |
+        npm install
         npx ionic build
         npx cordova platform add android
         npx cordova build android --debug
