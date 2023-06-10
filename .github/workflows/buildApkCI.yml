@@ -32,6 +32,7 @@ jobs:
       uses: coturiv/setup-ionic@v1.0.4
       with:
         cordova-version: 11
+        ionic-version: 5
         
 #     - name: Removing 32.0.0 Build tool
 #       run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --uninstall 'build-tools;32.0.0'
