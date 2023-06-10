@@ -59,7 +59,7 @@ jobs:
         npx cap copy
     - name:  resource creation
       run:
-        npm run resources
+        npx cordova-res android --skip-config --copy
 
     - name: Set app version from package.json
       run:
